@@ -29,7 +29,7 @@ io.sockets.on('connection', function(socket){
 
 	socket.on('send message', function(data){
 		io.sockets.emit('new message', {msg: data, nick: socket.nickname});
-		//socket.broadcast.emit('new message', data);
+		io.sockets.emit('new message', {msg: 'mensagem recebida no servidor', nick: 'bot' })//socket.broadcast.emit('new message', data);
 	});
 
 	socket.on('disconnect', function(data){
